@@ -15,13 +15,13 @@ class CombineNewAttributes(BaseEstimator, TransformerMixin):
   def transform(self, X):
     newRow = {
       'type': X[0][0],
-      'area': X[0][1],
-      'bedroom': X[0][2],
-      'bathroom': X[0][3],
-      'garage': X[0][4],
-      'latitude': X[0][5],
-      'longitude': X[0][6],
-      'bathroom_per_bedroom': X[0][3] / X[0][2]
+      'area': float(X[0][1]),
+      'bedroom': float(X[0][2]),
+      'bathroom': float(X[0][3]),
+      'garage': float(X[0][4]),
+      'latitude': float(X[0][5]),
+      'longitude': float(X[0][6]),
+      'bathroom_per_bedroom': float(X[0][3]) / float(X[0][2])
     } 
     df_result = self.dataset.append(newRow, ignore_index=True)
 
